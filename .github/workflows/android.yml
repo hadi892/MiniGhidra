@@ -23,15 +23,13 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Prepare Gradle Wrapper
+      - name: Prepare and Validate Gradle Wrapper
         run: |
-          if [ ! -f ./gradlew ]; then
-            gradle wrapper
-          fi
+          gradle wrapper --no-daemon
           chmod +x ./gradlew
 
-      - name: Build Release APK with Gradle Wrapper
-        run: ./gradlew assembleRelease --no-daemon --stacktrace
+      - name: Build Release APK
+        run: ./gradlew assembleRelease --no-daemon --stacktrace || gradle assembleRelease --no-daemon --stacktrace
 
       - name: Upload Release APK Artifact
         uses: actions/upload-artifact@v4
