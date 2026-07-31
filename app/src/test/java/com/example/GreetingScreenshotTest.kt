@@ -23,6 +23,7 @@ class GreetingScreenshotTest {
   fun greeting_screenshot() {
     composeTestRule.setContent { MyApplicationTheme(darkTheme = true, dynamicColor = false) { com.example.ui.MainScreen() } }
 
+    composeTestRule.waitForIdle()
     composeTestRule.onRoot().captureRoboImage(filePath = "src/test/screenshots/greeting.png")
   }
 }
