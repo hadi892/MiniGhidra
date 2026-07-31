@@ -1,0 +1,6 @@
+{
+  "name": "MiniGhidra",
+  "description": "Lightweight Android reverse engineering and static binary analysis framework specialized for ELF, ARM64, Qualcomm, and Hexagon DSP libraries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
